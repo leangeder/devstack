@@ -1,0 +1,9 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  app: localstack
+resources:
+- manifest/deploy.yml
+- manifest/rbac.yml
+- manifest/svc.yml
