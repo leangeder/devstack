@@ -6,20 +6,20 @@ metadata:
 requires:
 - path: ./flux
 - path: ./external-secrets
-- path: ./ingress
-- path: ./logging
-- path: ./monitoring
-# ---
-# apiVersion: skaffold/v2beta28
-# kind: Config
-# metadata:
-#   name: mysql
-# requires:
-# - path: ./mysql
-# ---
-# apiVersion: skaffold/v2beta28
-# kind: Config
-# metadata:
-#   name: rabbitmq
-# requires:
-# - path: ./rabbitmq
+# - path: ./ingress
+# - path: ./logging
+# - path: ./monitoring
+# # ---
+# # apiVersion: skaffold/v2beta28
+# # kind: Config
+# # metadata:
+# #   name: mysql
+# # requires:
+# # - path: ./mysql
+# # ---
+# # apiVersion: skaffold/v2beta28
+# # kind: Config
+# # metadata:
+# #   name: rabbitmq
+# # requires:
+# # - path: ./rabbitmq
