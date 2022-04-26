@@ -5,7 +5,7 @@ metadata:
   name: common
 requires:
 - path: ./flux
-- path: ./external-secrets
+# - path: ./external-secrets
 # - path: ./ingress
 # - path: ./logging
 # - path: ./monitoring
