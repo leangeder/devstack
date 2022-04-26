@@ -4,7 +4,6 @@ kind: Config
 deploy:
   kustomize:
     paths:
-    - ./flux
-    - ./operator
+    - .
   statusCheck: true
   statusCheckDeadlineSeconds: 20
