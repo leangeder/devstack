@@ -1,0 +1,156 @@
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: common
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: namespace-labels/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: traefik/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: metrics-server/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: aws-secret-operator/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+# ---
+# apiVersion: skaffold/v2beta20
+# kind: Config
+# metadata:
+#   name: monitoring
+# requires:
+# - git:
+#     repo: git@github.com:IMGARENA/kubernetes.git
+#     path: monitoring/k8s/local/skaffold.yaml
+#     ref: skaffold
+#     sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: traefik
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: traefik/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: localstack
+deploy:
+  kustomize:
+    paths:
+    - localstack
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: nginx
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: nginx/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: oauth2-proxy
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: oauth2-proxy/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: storage-class
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: storage-class/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: vertical-pod-autoscaler
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: vertical-pod-autoscaler/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: network-policy
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: network-policy/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: namespace-labels
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: namespace-labels/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: metrics-server
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: metrics-server/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: cert-manager
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: cert-manager/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true
+---
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: aws-secret-operator
+requires:
+- git:
+    repo: git@github.com:IMGARENA/kubernetes.git
+    path: aws-secret-operator/k8s/local/skaffold.yaml
+    ref: skaffold
+    sync: true

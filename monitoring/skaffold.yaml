@@ -1,0 +1,9 @@
+---
+apiVersion: skaffold/v2beta28
+kind: Config
+deploy:
+  kustomize:
+    paths:
+    - .
+  statusCheck: true
+  statusCheckDeadlineSeconds: 20
